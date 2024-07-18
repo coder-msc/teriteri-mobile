@@ -1,0 +1,19 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+
+
+    #time-view{
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        /*background: #0bc15f;*/
+    }
+    #time-view-head{
+        /*background: yellow;*/
+        flex: 0 0 11rem;
+        /*display: ;*/
+        top: 0;
+        position: sticky;
+        z-index: 999;
+    }
+
+}

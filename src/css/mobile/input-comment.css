@@ -1,0 +1,135 @@
+
+@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+
+
+    #input-comment-inputDm {
+        z-index: 9999;
+        display: flex;
+        background: white;
+        min-height: 9rem;
+        align-items: center;
+
+        position: fixed;
+
+        border-top: 1px solid #e9e9eb; /* 绘制线条 */
+        border-bottom: 1px solid #e9e9eb; /* 绘制线条 */
+        /*top:544px*/
+    }
+.el-textarea{
+    flex: 0 0 86rem;
+    border: none;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+
+}
+#input-comment-inputDm-icon{
+    background: white;
+    color: #c8c9cc;
+    transition: color 0.3s ease; /* 添加过渡效果 */
+}
+#input-comment-inputDm-icon:active{
+    color: #1989fa;
+}
+    .el-textarea__inner{
+        /* 去除默认样式 */
+        border: none;
+        outline: none;
+        flex: 0 0 86rem;
+        height: 7rem;
+        margin: 0 auto;
+        text-indent: 6rem;
+        font-size: 3.8rem;
+        color: #c8c9cc;
+        background: #e9e9eb;
+        border-radius: 4rem;
+    }
+    #input-comment-inputDm-input{
+        /* 去除默认样式 */
+        border: none;
+        outline: none;
+        flex: 0 0 86rem;
+        height: 7rem;
+        margin: 0 auto;
+        text-indent: 6rem;
+        font-size: 3.8rem;
+        color: #c8c9cc;
+        background: #e9e9eb;
+        border-radius: 4rem;
+    }
+
+    #input-comment-inputDmSelect{
+        /*padding-top: 2rem;*/
+        /*width: 100%;*/
+        position: fixed;
+        background: #e9e9eb;
+
+        /*height: 999px;*/
+        /*top: 579px;*/
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-comment-inputDm-icon1{
+        margin-left: 1rem;
+    }
+    .input-comment-inputDm-icon2{
+        margin-right: 2rem;
+
+    }
+
+    /*    弹幕发送框相关 */
+    .input-comment-inputDm-body{
+        flex: 0 0 8rem;
+        margin: 1rem 3rem;
+        /*background: #0264e7;*/
+        display: flex;
+        align-items: center;
+        /*background: #e9e9eb;*/
+
+    }
+    .input-comment-inputDm-body-font{
+        margin-right: 2rem;
+        flex: 0 0 20%;
+        font-size: 6rem;
+        text-align: center;
+        margin: 0 auto;
+        width: 8rem;
+        /*height: 8rem;*/
+        /*background: #6aee59;*/
+    }
+
+    #input-comment-input-comment-inputDm-bottom{
+        flex: 1 1 1rem;
+
+    }
+
+
+
+    #input-comment-input-comment-inputDm-body-color-select{
+        flex: 0 0 80rem;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        /*height: 88px;*/
+        overflow-y: auto;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

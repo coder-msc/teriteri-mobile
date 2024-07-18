@@ -1,0 +1,77 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+
+
+    #home-msg{
+        width: 100vw;
+        height: 90vh;
+       background:  white;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+
+
+    #home-msg-car{
+        width: 100%;
+        flex: 0 0 15rem;
+        /*background: #0264e7;*/
+        display: flex;
+        margin-top: 8rem;
+    }
+    .home-msg-car-item{
+        background: white;
+        flex: 1 1 33rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        transition: background-color 0.3s ease; /* 添加过渡效果 */
+
+
+    }
+    .home-msg-car-item:active{
+        background: #e9e9eb;
+    }
+    .home-msg-car-item-size{
+        font-size: 8rem;
+        text-align: center;
+        padding-top: 1rem;
+
+
+    }
+    .home-msg-car-item-font{
+        font-size: 3.5rem;
+    }
+    .home-msg-car-item2{
+        border-right: 1px solid #e9e9eb;
+        border-left: 1px solid #e9e9eb;
+
+    }
+    #home-msg-main{
+        background: white;
+        width: 99%;
+        min-height: 76vh;
+        border-top: 5rem solid #dedfe0;
+        margin-top: 5rem;
+    }
+
+
+    #home-msg-main-title{
+        width: 100%;
+        height: 7rem;
+        background: white;
+        border-bottom: 1px solid #e9e9eb;
+        display: flex;
+        font-size: 4rem;
+        align-items: center;
+        padding-left: 2rem;
+    }
+
+    #home-msg-main-car{
+      /*padding-top: 3rem;*/
+    }
+
+
+
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function formatTime(seconds) {  // 传递一个秒
+        var date = new Date(null);
+        date.setSeconds(seconds);
+
+        var formattedTime = date.toISOString().substr(11, 8);
+        console.log("直接输出：",formattedTime)
+        if(typeof formattedTime=="string"){
+            const regex=/0+:/
+         const result=   formattedTime.replace(regex,'')
+            console.log("匹配结果：",result)
+            formattedTime=result
+        }
+        return formattedTime;
+    }
+
+
+    const video = document.createElement('video');
+    video.src = 'http://127.0.0.1:9000/video/%E5%BC%B1%E9%9F%B33_1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=CWMAI7E3UFVCQKOOVATH%2F20240326%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240326T080221Z&X-Amz-Expires=604800&X-Amz-Security-Token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NLZXkiOiJDV01BSTdFM1VGVkNRS09PVkFUSCIsImV4cCI6MTcxMTQ4MzI4NywicGFyZW50IjoiYWRtaW4ifQ.98BcdbyYjMV3DmXgepHPIko_cHrjf73DXAKIOMByZFGrqJt9ElBUYA09v6dZKd9JogsHMgaUF8iZgMRUldrgtA&X-Amz-SignedHeaders=host&versionId=null&X-Amz-Signature=5f64862869332370378ab0f37ad363aef048976c11ad668afc2c459ebc2331d8';
+    video.addEventListener('loadedmetadata', function() {
+        console.log('视频时长：', video.duration + '秒');
+
+        var formatted = formatTime(video.duration); // 将秒数格式化为 时:分:秒 的形式
+        console.log("格式化",formatted); // 输出结果为 "01:01:05"
+    });
+</script>
+</body>
+</html>

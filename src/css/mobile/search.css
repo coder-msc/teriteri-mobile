@@ -1,0 +1,83 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+
+
+    #view-search{
+        width: 100%;
+        /*height: 100%;*/
+        /*background: yellow;*/
+
+        display: flex;
+        flex-direction: column;
+
+    }
+    .view-search-item{
+        flex: 0 0 23rem;
+        display: flex;
+        /*background: #6aee59 ;*/
+        margin: 1rem 1rem;
+        overflow: hidden;
+    }
+
+    .view-search-item-image{
+        flex: 0 0 40rem;
+        /*background: blue;*/
+        border-radius: 1.8rem;
+        overflow: hidden;
+        position: relative;
+    }
+    .view-search-item-content{
+        flex: 1 1 3rem;
+        padding-left: 3rem;
+        /*background: #2c3e50;*/
+    }
+
+    .view-search-item-time{
+        position: absolute;
+        z-index: 3;
+        left: 28rem;
+        top: 17rem;
+        width: 10rem;
+        height: 5rem;
+        background: rgba(24, 24, 24, 0.4);
+        color: white;
+        font-size: 3rem;
+        text-indent: 1rem;
+
+    }
+
+    .view-search-item-image-m{
+        width: 100%;
+        height: 112%;
+        margin-top: -26rem;
+        float: left;
+        z-index: 2;
+        position: relative;
+        background: rgba(24, 24, 24, 0.1);
+    }
+
+    .view-search-item-content-title{
+        margin-top: 1rem;
+        /*margin-left: 1rem;*/
+        font-weight: bold; /* 设置文字加粗 */
+        font-family: HYKaiti;
+        /*font-size: 3.5rem;*/
+        line-height: 5rem;
+
+
+        width: 100%;
+        height: 10rem;
+        overflow: hidden; /* 溢出隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        /*两行后省略*/
+        -webkit-line-clamp: 2;
+    }
+
+    .view-search-item-view,.view-search-item-size{
+        font-size: 3rem;
+    }
+
+
+}

@@ -1,0 +1,194 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <style>&ndash;&gt;-->
+<!--&lt;!&ndash;        #A{&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #0bc15f;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 600px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 600px;&ndash;&gt;-->
+<!--&lt;!&ndash;            display: flex;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        #B{&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 300px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 600px;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: blue;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        #C{&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 300px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 700px;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #2c3e50;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div id="A">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div id="B"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div id="C"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <style>-->
+<!--        #A {-->
+<!--            background: #0bc15f;-->
+<!--            width: 600px;-->
+<!--            height: 600px;-->
+<!--            display: flex;-->
+<!--            overflow: hidden; /* 隐藏溢出内容 */-->
+<!--            position: relative; /* 相对定位 */-->
+<!--        }-->
+
+<!--        #B {-->
+<!--            width: 300px;-->
+<!--            height: 600px;-->
+<!--            background: blue;-->
+<!--            position: absolute; /* 绝对定位 */-->
+<!--            left: 0; /* 初始位置在左边 */-->
+<!--            animation: slideInOut 0.5s ease forwards; /* 初始动画 */-->
+<!--        }-->
+
+<!--        #C {-->
+<!--            width: 300px;-->
+<!--            height: 600px;-->
+<!--            background: #2c3e50;-->
+<!--            position: absolute; /* 绝对定位 */-->
+<!--            left: 100%; /* 初始位置在右边 */-->
+<!--        }-->
+
+<!--        @keyframes slideInOut {-->
+<!--            0% {-->
+<!--                transform: translateX(-100%); /* 初始位置在左边 */-->
+<!--            }-->
+<!--            100% {-->
+<!--                transform: translateX(0%); /* 移动到中间 */-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="A">-->
+<!--    <div id="B">-->
+<!--        &lt;!&ndash; B标签页面的内容 &ndash;&gt;-->
+<!--        Content of B-->
+<!--    </div>-->
+<!--    <div id="C">-->
+<!--        &lt;!&ndash; C标签页面的内容 &ndash;&gt;-->
+<!--        Content of C-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; 按钮用于切换标签页 &ndash;&gt;-->
+<!--<button onclick="showPage('B')">Show B</button>-->
+<!--<button onclick="showPage('C')">Show C</button>-->
+
+<!--<script>-->
+<!--    function showPage(pageId) {-->
+<!--        var pages = document.querySelectorAll('#A > div'); // 获取A下面的所有子div-->
+<!--        for (var i = 0; i < pages.length; i++) {-->
+<!--            pages[i].style.animation = ''; // 清除动画-->
+<!--        }-->
+<!--        document.getElementById(pageId).style.animation = 'slideInOut 0.5s ease forwards'; // 应用动画-->
+<!--        for (var i = 0; i < pages.length; i++) {-->
+<!--            pages[i].style.display = 'none'; // 隐藏所有子div-->
+<!--        }-->
+<!--        document.getElementById(pageId).style.display = 'block'; // 显示指定id的页面-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传视频并选择封面</title>
+</head>
+<body>
+
+<h2>上传视频并选择封面</h2>
+
+<!-- 视频文件上传 -->
+<input type="file" id="fileInput" accept="video/*">
+
+<!-- 预览视频 -->
+<video id="videoPreview" controls style="max-width: 100%; display: none;"></video>
+
+<!-- 显示选择的封面 -->
+<img id="coverImage" style="max-width: 100%; display: none;">
+
+<script>
+    // 获取视频文件对象
+    var fileInput = document.getElementById('fileInput'); // 假设你有一个文件输入框，用于选择视频文件
+    var video = document.createElement('video');
+
+    fileInput.addEventListener('change', function(event) {
+
+        var file = event.target.files[0];
+
+        // 检查文件类型，确保是视频文件
+        if (file.type.startsWith('video/')) {
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                video.src = event.target.result;
+
+                // 当视频加载完成后
+                video.addEventListener('loadedmetadata', function() {
+                    var canvas = document.createElement('canvas');
+                    var ctx = canvas.getContext('2d');
+
+                    // 设置 canvas 尺寸与视频尺寸相同
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+
+                    // 视频准备就绪后设置视频播放时间为 5 秒
+                    video.currentTime = 1; // 设置为你想要捕获封面图像的时间点，单位为秒
+
+                    // 当视频跳转到指定时间后
+                    video.addEventListener('seeked', function() {
+                        // // 绘制当前视频帧到 canvas
+                        // ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        //
+                        // // 导出封面图像为 base64 格式
+                        // var coverImageData = canvas.toDataURL('image/png');
+                        // console.log(coverImageData); // 这里是封面图像的 base64 数据
+
+                        setTimeout(function() {
+                            // 绘制当前视频帧到 canvas
+                            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                            // 导出封面图像为 base64 格式
+                            var coverImageData = canvas.toDataURL('image/jpeg');
+                            console.log(coverImageData); // 这里是封面图像的 base64 数据
+                        }, 1000); // 1 秒后执行截屏操作，可以根据实际情况调整等待时间
+                    });
+                });
+
+                // 加载视频
+                video.load();
+            };
+
+            // 读取视频文件
+            reader.readAsDataURL(file);
+        } else {
+            console.error('请选择视频文件！');
+        }
+
+
+
+    });
+</script>
+
+</body>
+</html>

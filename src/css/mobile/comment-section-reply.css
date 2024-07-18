@@ -1,0 +1,60 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+
+
+    #comment-section-reply-popup{
+        height: 50%;
+        background:  #e9e9eb;
+    }
+
+    #comment-section-popup-content{
+        /*background: #0bc15f;*/
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+
+    }
+    #comment-section-popup-content-main{
+        width: 100%;
+        height: 10rem;
+        /*background: #0bc15f;*/
+        display: flex;
+        align-items: center;
+        font-size: 3.4rem;
+        background: white;
+        margin-top: 2rem;
+        color:#b1b3b8;
+        /*border-top: 4rem solid #c8c9cc;*/
+        /*border: 1px solid black;*/
+    }
+    .comment-section-popup-content-main-font{
+        flex: 0 0 25rem;
+        /*background: #0264e7;*/
+        text-align: center;
+
+
+    }
+    .comment-section-popup-content-main-size{
+        flex: 0 0 35rem;
+        /*background: #0264e7;*/
+        text-align: center;
+    }
+    .comment-section-popup-content-main-m{
+        flex: 1 1 20rem;
+        height: 1rem;
+        /*background: #2c3e50;*/
+    }
+
+    .comment-section-popup-content-main-font:hover{
+
+
+    }
+    #comment-section-popup-content-child{
+        margin-bottom: 9rem
+    }
+
+
+
+
+
+}

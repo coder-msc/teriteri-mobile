@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Emoji at Cursor Position in Input</title>
+</head>
+<body>
+
+<input type="text" id="input-box">
+<button onclick="insertEmoji('😊')">😊</button>
+<button onclick="insertEmoji('❤️')">❤️</button>
+<button onclick="insertEmoji2('❤️')">在上一次位置插入</button>
+<!-- Add more buttons for other emojis -->
+
+<script>
+    let a=0;
+    function insertEmoji(emoji) {
+        var inputBox = document.getElementById("input-box");
+        var startPos = inputBox.selectionStart;
+        var endPos = inputBox.selectionEnd;
+        a=startPos;
+        var text = inputBox.value;
+        var newText = text.substring(0, startPos) + emoji + text.substring(endPos, text.length);
+        inputBox.value = newText;
+        inputBox.selectionStart = startPos + emoji.length;
+        inputBox.selectionEnd = startPos + emoji.length;
+       // inputBox.focus();
+    }
+    function insertEmoji2(emoji) {
+        var inputBox = document.getElementById("input-box");
+        var startPos = a;
+        var endPos =a+1;
+        var text = inputBox.value;
+       //  +text.slice(a);
+        var newText = text.substring(0, startPos) + emoji +text.slice(a);
+        inputBox.value = newText;
+        // inputBox.selectionStart = startPos + emoji.length;
+        // inputBox.selectionEnd = startPos + emoji.length;
+        // inputBox.focus();
+    }
+</script>
+
+</body>
+</html>

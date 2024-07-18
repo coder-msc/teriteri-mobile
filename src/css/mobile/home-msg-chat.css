@@ -1,0 +1,80 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+
+
+    #view-user-body-user{
+        margin-left: 2rem;
+
+        flex: 0 1 55rem;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .user-massage{
+        font-size: 2rem;
+        height: 8rem;
+        display: flex;
+    }
+
+    .user-name{
+        font-size: 4.6rem;
+        height: 6rem;
+        color: black;
+    }
+    .user-massage-item{
+        margin-top: 0.8rem;
+        color: #b1b3b8;
+        font-size: 3.2rem;
+       line-height: 3.6rem;
+
+        overflow: hidden; /* 溢出隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        /*两行后省略*/
+        -webkit-line-clamp: 2;
+    }
+    .user-placeholding{
+        flex: 1 1 1rem;
+    }
+
+    #view-user-brief{
+        /*background: blue;*/
+        flex: 1 0 35rem;
+        /*margin-left: 4rem;*/
+        display: flex;
+        height: 18rem;
+        align-items: center;
+        padding-left: 3rem;
+
+        transition: background-color 0.3s ease; /* 添加过渡效果 */
+
+        /*background: yellow;*/
+        border-bottom: 1px solid #dedfe0;
+        /*border-top: 1px solid #dedfe0;*/
+        /*margin-bottom: 3rem;*/
+    }
+    #view-user-brief:active{
+        background-color: #e9e9eb; /* 点击后改变背景颜色 */
+    }
+    #view-user-brief-image{
+        display: flex;
+        align-items: center;
+    }
+    #home-msg-chat-time{
+        font-size: 3.2rem;
+        flex: 1 1 5rem;
+        width: 10rem;
+        margin-right: 0.1rem;
+        /*background: #0bc15f;*/
+        white-space: nowrap;
+        margin-top: -7rem;
+        color:  #c8c9cc;;
+    }
+    #view-user-brief-m{
+        margin: 1.5rem 1.5rem;
+        width: 100%;
+        border-bottom: 1px solid #dedfe0;
+    }
+}

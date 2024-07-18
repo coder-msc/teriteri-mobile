@@ -1,0 +1,289 @@
+@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+
+
+    /*    main组件*/
+    #home-main-home{
+        display: flex;
+        min-height: 81vh;
+        flex: 1 1 0;
+        background: #f1f1f2;
+        /*background: #181818;*/
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+#home-main-home2{
+    height: 81vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+    /*!*    下边*!*/
+    #home-bottom{
+        margin-top: 1rem;
+        flex: 0 0 11rem;
+
+        height: 13rem;
+
+
+
+    }
+
+    /*    视频元素*/
+
+
+    .home-main-home-item{
+        margin: 1rem auto;
+        flex: 0 0 48rem;
+        height: 48rem;
+
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+
+
+
+   .home-main-home-item:first-of-type{
+
+        margin: 1rem auto;
+        margin-top: 2rem;
+        flex: 0 0 97rem;
+        height: 80rem;
+
+
+        border-radius: 2rem;
+    }
+
+   .home-main-home-item:first-of-type .home-main-home-loading{
+        background: white;
+        z-index: 3;
+        height: 80rem;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+        margin-left: -5rem;
+    }
+   .home-main-home-item:first-of-type .home-main-home-item-font{
+        display: flex;
+        align-items: center;
+        float: left;
+        margin-top: -10rem;
+        margin-left: 2rem;
+
+        z-index: 2;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+    }
+
+   .home-main-home-item:first-of-type .home-main-home-image{
+        margin-top: 0;
+        width: 100%;
+        height: 73%;
+        background: yellow;
+
+
+    }
+   .home-main-home-item:first-of-type .home-main-home-item-viwe{
+
+        text-align: center;
+        font-size: 4.5rem;
+        color: white;
+    }
+
+   .home-main-home-item:first-of-type .home-main-home-image-url{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+    }
+   .home-main-home-item:first-of-type .home-main-home-item-title{
+        width: 100%;
+        height: 30%;
+        background: white;
+    }
+   .home-main-home-item:first-of-type .home-main-home-image-url-m{
+        width: 100%;
+        height: 100%;
+        margin-top: -60rem;
+        float: left;
+        z-index: 2;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+        background: rgba(24, 24, 24, 0.1);
+    }
+   .home-main-home-item:first-of-type  .home-main-home-item-font-time{
+        margin-left: 65rem;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 4.5rem;
+    }
+
+   .home-main-home-item:first-of-type .home-main-home-item-title-conter{
+        font-weight: bold; /* 设置文字加粗 */
+        font-family: HYKaiti;
+        font-size: 4rem;
+        line-height: 5rem;
+
+        text-indent: 1rem;
+        width: 100%;
+        heig1ht: 10rem;
+        overflow: hidden; /* 溢出隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        /*两行后省略*/
+        -webkit-line-clamp: 2;
+
+    }
+
+   .home-main-home-item:first-of-type  .home-main-home-item-title-user{
+        display: flex;
+        font-family: HYKaiti;
+        font-weight: bold; /* 设置文字加粗 */
+        font-size: 3.5rem;
+        margin: 1.5rem 1rem;
+        color: rgba(0, 0, 0, 0.45);
+    }
+   .home-main-home-item:first-of-type  .home-main-home-item-title-user-name{
+        margin-left: 2.5rem;
+    }
+
+
+
+
+
+
+
+
+    .home-main-home-item-title-user-name{
+        font-size: 3rem;
+    }
+
+    .home-main-home-item-font{
+        display: flex;
+        align-items: center;
+        float: left;
+        margin-top: -8rem;
+        margin-left: 2rem;
+
+        z-index: 2;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+
+    }
+    .home-main-home-item-viwe{
+
+        text-align: center;
+        font-size: 3.5rem;
+        color: white;
+    }
+    .home-main-home-image{
+        margin-top: 0;
+        width: 100%;
+        height: 61%;
+        background: yellow;
+        position: relative;
+
+
+    }
+    .home-main-home-image-url{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+    }
+    .home-main-home-item-title{
+        width: 100%;
+        height: 39%;
+        background: white;
+    }
+
+    .home-main-home-image-url-m{
+        width: 100%;
+        height: 100%;
+        margin-top: -31rem;
+        float: left;
+        z-index: 2;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+        background: rgba(24, 24, 24, 0.1);
+    }
+    .home-main-home-item-font-time{
+        margin-left: 24rem;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 3.5rem;
+    }
+
+
+
+
+
+    /*标题内容相关*/
+    .home-main-home-item-title{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+
+    .home-main-home-item-title-conter{
+        font-weight: bold; /* 设置文字加粗 */
+        font-family: HYKaiti;
+        font-size: 3.5rem;
+        line-height: 5rem;
+
+        text-indent: 1rem;
+        width: 100%;
+        height: 10rem;
+        overflow: hidden; /* 溢出隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        /*两行后省略*/
+        -webkit-line-clamp: 2;
+
+    }
+
+    /*    用户*/
+    .home-main-home-item-title-user{
+        display: flex;
+        font-family: HYKaiti;
+        font-weight: bold; /* 设置文字加粗 */
+        font-size: 1rem;
+        margin: 1rem 1rem;
+        color: rgba(0, 0, 0, 0.45);
+    }
+    .home-main-home-item-title-user-name{
+        margin-left: 1rem;
+    }
+    .home-main-home-loading{
+        background: white;
+        z-index: 3;
+        height: 48rem;
+        position: relative; /* 需要添加position:relative属性来启用z-index */
+        margin-left: -5rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
