@@ -1,9 +1,9 @@
 import { HomeViewCard } from "@/api/video/video";
 import { BulletOption } from "@nplayer/danmaku/dist/src/ts/danmaku/bullet";
 
-export enum SERVICE_ROUT { // 后端路由
-    ServerPath = "http://127.0.0.1:7070",
-    SERVER_SOCKET = "ws://127.0.0.1:7070",
+export enum SERVICE_ROUT { // 后端路由 http://192.168.0.104:3000
+    ServerPath = "http://192.168.0.104:7070",
+    SERVER_SOCKET = "ws://192.168.0.104:7070",
     //ServerPath="http://127.0.0.1:8080",
     HELLO_GET = "/hello",
     TOKEN_LOGIN = "user/token/login", // 使用token自动登录
@@ -30,7 +30,7 @@ export enum SERVICE_ROUT { // 后端路由
     VIDEO_COMMENTS_LIKE_DELETE = "/video/comments/like", // 视频评论点赞取消
     VIDEO_COMMENTS_DELETE = "/video/comments",
     VIDEO_SPARKLE_PUT = "/video/sparkle",   // 视频点火
-    VIDEO_GET = "/video/video",  // 获得播放视频
+    VIDEO_GET = "/video/getone",  // 获得播放视频
     VIDEO_UPLOAD_POST = '/video/upload',    // 视频上传
     USER_SOCKET = "",
     USER_HISTORY = "/user/history",

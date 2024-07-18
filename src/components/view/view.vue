@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../../css/mobile/view.css">
 <script setup lang="ts">
-
 import V3Emoji from 'vue3-emoji'
 import {computed, onMounted, ref, toRefs, watch, watchEffect} from "vue";
 import Danmaku from "@nplayer/danmaku";
@@ -13,7 +12,6 @@ import { showToast } from 'vant';
 import {videoSocket, ViewCommentArray, ViewUpUserId} from '../../store/DataStore'
 import {Assignment} from '../../util/util'
 
-//import '../../store/RouterStore'
 import {commentRoute, emojiShow, inputCommentTopShow, replyObject, shareShow, typeShow} from '../../store/DataStore'
 import {Search} from "@element-plus/icons-vue";
 import SearchView from "@/components/home/search/search-view.vue";
@@ -24,6 +22,7 @@ import {HomeViewCard, Response, SERVICE_ROUT, ViewUserCard, ViewVideoCard} from 
 import {HttpGet, HttpPut} from "../../api/http";
 import {viewVideoId } from  '../../store/DataStore'
 import {id} from "../../store/UserSrore";
+import {HomeInitResponse} from "../../api/response/Response";
 //import {emoji} from '../../store/DataStore'
 //import {hasKey} from "../../util/util";
 
@@ -37,45 +36,47 @@ const viewCard=ref<Response<ViewVideoCard>>()
 //
 // })
 
-const Src=ref<string>("")
-const viewDom=ref(null)
-onMounted( async ()=>{
+const Src = ref<string>("")
+const viewDom = ref(null)
+onMounted(async () => {
   try {
-    ViewCommentArray.value=[]
-    console.log("播放对象：",player)
-    console.log("请求的视频id:",viewVideoId.value)
+    ViewCommentArray.value = []
+    console.log("播放对象：", player)
+    console.log("请求的视频id:", viewVideoId.value)
 
-    viewCard.value= ( await HttpGet(SERVICE_ROUT.VIDEO_GET+"/"+viewVideoId.value)).data
-    console.log("需要播放的数据：",viewCard.value)
- list.value.push(viewCard.value.body.recommend)
-  // const videoDome= document.getElementsByClassName("nplayer_video")[0]
-   // Src.value=viewCard.value.body.videoSrc
-        player.video.src=viewCard.value.body.videoSrc
-    ViewUpUserId.value=viewCard.value.body.userId // 作者id
-      if( player.danmaku.items){
-        player.danmaku.items.push( ...viewCard.value.body.barrage)
-        console.log("初始化弹幕")
-      }else {
-        console.error("初始化弹幕失败")
-      }
+    // viewCard.value= ( await HttpGet(SERVICE_ROUT.VIDEO_GET+"?vid="+viewVideoId.value)).data
+
+    const responseResponse: Response<HomeInitResponse> = (await HttpGet(SERVICE_ROUT.VIDEO_GET + "?vid=" + viewVideoId.value)).data;
+    console.log("需要播放的数据：", responseResponse)
+
+
+    // list.value.push(viewCard.value.body.recommend)
+    player.video.src = responseResponse.data.video.videoUrl
+    ViewUpUserId.value = responseResponse.user.uid // 作者id
+    if (player.danmaku.items) {
+      // player.danmaku.items.push(...viewCard.value.body.barrage)
+      console.log("初始化弹幕")
+    } else {
+      console.error("初始化弹幕失败")
+    }
 
     //videoDome.src=viewCard.value.body.videoSrc  // 改变播放列表
 
-   // options.value.src=viewCard.value.body.videoSrc
-    console.log("后端传世的评论数据：",viewCard.value.body)
-    ViewCommentArray.value=  Assignment(viewCard.value.body.comment)
-    ViewCommentArray.value.sort((a,b)=>b.likeSize-a.likeSize)  // 按热度
-    console.log("评论数据：",ViewCommentArray.value)
+    // options.value.src=viewCard.value.body.videoSrc
+    console.log("后端传世的评论数据：", viewCard.value.body)
+    // ViewCommentArray.value = Assignment(viewCard.value.body.comment)
+    ViewCommentArray.value.sort((a, b) => b.likeSize - a.likeSize)  // 按热度
+    console.log("评论数据：", ViewCommentArray.value)
 
-    viewDom.value= document.getElementById('view')
-    if(viewCard.value.status==404){
+    viewDom.value = document.getElementById('view')
+    if (viewCard.value.status == 404) {
       console.error("home页面错误：404")
     }
-  }catch (e){
-    if(e.code === 'ECONNABORTED'){
+  } catch (e) {
+    if (e.code === 'ECONNABORTED') {
       console.error("请求超时")
     }
-    console.log("error:播放页面错误view:",e)
+    console.log("error:播放页面错误view:", e)
   }
   // try {
   //
@@ -876,7 +877,7 @@ const onLoad =async () => {
           <input type="text" ref="inputDmInput"  @keyup.enter="OnClickSend" id="inputDm-input" v-model="barrage.text" @click="OnClickinputDmInput"    @focus="onInputFocus" @blur="onInputBlur" placeholder="点击输入框弹出键盘">
           <van-icon :color="inputDmIcon2Color"  @click="OnClickSend"  size="9rem" class="inputDm-icon2" name="guide-o" />
         </div>
- 
+
 <!--
           弹幕字号选择--舍弃
 -->

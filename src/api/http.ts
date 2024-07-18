@@ -17,7 +17,7 @@ const http = axios.create({
 // 设置拦截器--在给发送后端请求前
 http.interceptors.request.use(config => {
     // config.headers.set("token",getToken())
-    config.headers.set("Authorization", "Bearer " + getToken())
+    // config.headers.set("Authorization", "Bearer " + getToken())
     console.log("请求头：", config.headers)
     return config
 })

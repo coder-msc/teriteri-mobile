@@ -14,12 +14,15 @@ node版本 18.16.0
 
 ```sh
 npm install
+
 ```
 
 ### 运行
 
 ```sh
 npm run dev
+
+npm start  -- 选择的IP会更多  （推荐）
 ```
 
 ### 打包

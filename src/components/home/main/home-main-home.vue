@@ -45,7 +45,7 @@ onMounted(async () => {
         if (play.value.status == 200) {
             loading.value = false;
             gjloading.value = false;
-            list.value.push(...play.value.body);
+            list.value.push(...play.value.data);
         }
         if (play.value.status == 404) {
             console.error("home页面错误：404");
@@ -151,7 +151,7 @@ const onLoad = async () => {
         <van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" error-text="请求失败，点击重新加载" @load="onLoad">
             <van-pull-refresh v-model="refreshing" success-text="刷新成功" @refresh="onRefresh" style="min-height: 81vh;">
                 <div id="home-main-home">
-                    <div class="home-main-home-item" v-for="(item,index )  in list" @click="toViewVideo(item.videoId)">
+                    <div class="home-main-home-item" v-for="(item,index )  in list" @click="toViewVideo(item.video.vid)">
                         <van-skeleton :row="3" :loading="gjloading" class="home-main-home-loading" title-width="90%">
                             <template #template>
                                 <div :style="{ flex: 1, marginLeft: '16px' }">
@@ -172,7 +172,7 @@ const onLoad = async () => {
                                     <span class="home-main-home-item-viwe"> {{item.playback}}</span>
                                     <div class="home-main-home-item-font-time">
                                         <!--                时间-->
-                                        <span>{{formatTime(item.time)}}</span>
+                                        <span>{{formatTime(item.video.duration)}}</span>
                                     </div>
                                 </div>
                             </div>
