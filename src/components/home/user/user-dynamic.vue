@@ -271,7 +271,7 @@ const Tap_active=ref(0)
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+@media screen  /*and (min-device-width: 200px) and (max-device-width:5000px) */{
   #user-video-list{
     //margin-top: 4rem;
     background: white;

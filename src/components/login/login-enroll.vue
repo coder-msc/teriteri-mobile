@@ -10,7 +10,7 @@ import {HttpPost, HttpPut} from "@/api/http";
 import {setUser} from "@/store/UserSrore";
 onMounted(()=>{
   console.log("组件login激活");
-  
+
 })
 onUnmounted(async ()=>{
   console.log("组件login销毁")
@@ -320,7 +320,7 @@ function OnClickBar(){
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+@media screen /* and (min-device-width: 200px) and (max-device-width:5000px)*/ {
 
   #login{
     width: 100vw;

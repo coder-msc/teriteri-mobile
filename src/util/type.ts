@@ -2,8 +2,8 @@ import { HomeViewCard } from "@/api/video/video";
 import { BulletOption } from "@nplayer/danmaku/dist/src/ts/danmaku/bullet";
 
 export enum SERVICE_ROUT { // 后端路由 http://192.168.0.104:3000
-    ServerPath = "http://192.168.0.104:7070",
-    SERVER_SOCKET = "ws://192.168.0.104:7070",
+    ServerPath = "http://192.168.0.105:7070",
+    SERVER_SOCKET = "ws://192.168.0.105:7070",
     //ServerPath="http://127.0.0.1:8080",
     HELLO_GET = "/hello",
     TOKEN_LOGIN = "user/token/login", // 使用token自动登录

@@ -124,7 +124,8 @@ function  mm(){
 <style scoped>
 
 
-@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+/*@media screen  and (min-device-width: 200px) and (max-device-width:500px) {*/
+@media screen   {
 
 
 

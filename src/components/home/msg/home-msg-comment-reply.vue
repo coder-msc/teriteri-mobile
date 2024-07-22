@@ -89,7 +89,8 @@ function ToUser(){
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:500px) {
+/*@media screen  and (min-device-width: 200px) and (max-device-width:500px) {*/
+@media screen   {
 
   .user-massage-time{
     color: #b1b3b8;

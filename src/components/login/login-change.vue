@@ -9,7 +9,7 @@ import {HttpPost} from "@/api/http";
 import {Response, SERVICE_ROUT} from "@/util/type";
 onMounted(()=>{
   console.log("组件login激活");
-  
+
 })
 onUnmounted(async ()=>{
   console.log("组件login销毁")
@@ -315,7 +315,7 @@ function OnClickBar(){
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+@media screen  /*and (min-device-width: 200px) and (max-device-width:5000px) */{
 
   #login{
     width: 100vw;

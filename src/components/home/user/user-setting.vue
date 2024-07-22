@@ -315,7 +315,7 @@ function ToUserChge(){
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+@media screen /* and (min-device-width: 200px) and (max-device-width:5000px)*/ {
 
   #user-setting{
     width: 100vw;

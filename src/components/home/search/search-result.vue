@@ -163,7 +163,8 @@ const onLoad =async () => {
 </template>
 
 <style scoped>
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+/*@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {*/
+@media screen {
 
 #search-result{
   width: 100vw;

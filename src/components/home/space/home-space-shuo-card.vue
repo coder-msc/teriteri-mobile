@@ -395,7 +395,8 @@ function SpaceDelete(spaceId:number){
 
 <style scoped>
 
-@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {
+@media screen    {
+/*@media screen  and (min-device-width: 200px) and (max-device-width:5000px) {*/
 
   .home-space-video-card-image-item{
     margin: 1rem 1rem;

@@ -152,7 +152,7 @@ function OnClickBar() {
 </template>
 
 <style scoped>
-@media screen and (min-device-width: 200px) and (max-device-width: 5000px) {
+@media screen /*and (min-device-width: 200px) and (max-device-width: 5000px)*/ {
     #login {
         width: 100vw;
         height: 100vh;
