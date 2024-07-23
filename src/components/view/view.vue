@@ -18,7 +18,7 @@ import SearchView from "@/components/home/search/search-view.vue";
 import CommentSection from "@/components/comment/comment-section.vue";
 import CommentSectionReply from "@/components/comment/comment-section-reply.vue";
 import InputComment from "@/components/comment/input-comment.vue";
-import {HomeViewCard, Response, SERVICE_ROUT, ViewUserCard, ViewVideoCard} from '../../util/type'
+import {CommentsData, HomeViewCard, Response, SERVICE_ROUT, ViewUserCard, ViewVideoCard} from '../../util/type'
 import {HttpGet, HttpPut} from "../../api/http";
 import {viewVideoId} from '../../store/DataStore'
 import {id} from "../../store/UserSrore";
@@ -36,10 +36,44 @@ onMounted(async () => {
     const responseResponse: Response<HomeInitResponse> = (await HttpGet(SERVICE_ROUT.VIDEO_GET + "?vid=" + viewVideoId.value)).data;
     console.log("需要播放的数据：", responseResponse)
 
+    viewCard.value= {
+      code:123,
+      message:"mess信息",
+      body:{
+        videoId:responseResponse.data.video.vid,
+        userSomeone:12,
+        userVideoSize:12,
+        concern:true,
+        userId:responseResponse.data.user.uid,
+        userImage: responseResponse.data.user.avatar_url,
+        label:"标签1",
+        brief:"这个是简介",
+        title:"标题",
+        userName:" 作者名字",
+        likeState: true, // 点赞状态        ---
+        noLikeState: true, // 点踩状态 TODO
+        collectionState: true, // 收藏状态
+        sparkleState: true, // 点火状态
+        likeSize: 12, // 点赞数
+        collectionSize: 12,// 收藏数量
+        heatSize: 12, // 热度数
+        forwardSize: 12,//  转发数量 TODO
+        barrage:  [],
+        date: 12
+      }
+    }
+    console.log("简介页面的数据2",responseResponse.data.video.vid)
+    console.log("简介页面的数据1",viewCard.value.body)
+
+
+    // const tempViewVideoCard:ViewVideoCard
+    // tempViewVideoCard.brief="322"
+    // viewCard.value= tempViewVideoCard
+
 
     // list.value.push(viewCard.value.body.recommend)
     player.video.src = responseResponse.data.video.videoUrl
-    ViewUpUserId.value = responseResponse.user.uid // 作者id
+    ViewUpUserId.value = responseResponse.data.user.uid // 作者id
     if (player.danmaku.items) {
       // player.danmaku.items.push(...viewCard.value.body.barrage)
       console.log("初始化弹幕")
@@ -48,15 +82,15 @@ onMounted(async () => {
     }
     //videoDome.src=viewCard.value.body.videoSrc  // 改变播放列表
     // options.value.src=viewCard.value.body.videoSrc
-    console.log("后端传世的评论数据：", viewCard.value.body)
+    // console.log("后端传世的评论数据：", viewCard.value.body)
     // ViewCommentArray.value = Assignment(viewCard.value.body.comment)
     ViewCommentArray.value.sort((a, b) => b.likeSize - a.likeSize)  // 按热度
     console.log("评论数据：", ViewCommentArray.value)
 
     viewDom.value = document.getElementById('view')
-    if (viewCard.value.status == 404) {
-      console.error("home页面错误：404")
-    }
+    // if (viewCard.value.status == 404) {
+    //   console.error("home页面错误：404")
+    // }
   } catch (e) {
     if (e.code === 'ECONNABORTED') {
       console.error("请求超时")
@@ -469,6 +503,7 @@ const onSelect = (option) => {
 };
 
 const msg = ref(true)
+msg.value="这个是msg"
 // 分享按钮     --->
 //const shareShow =RouterStore().shareShow
 const userShow = ref(true)

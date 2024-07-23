@@ -1,6 +1,6 @@
-import { User } from "@/util/type";
-import { Video, VideoStats } from "../video/video";
+ import { Video, VideoStats } from "../video/video";
 import { Category } from "../category/category";
+ import {User} from "../user/User";
 
 export interface HomeInitResponse {
     status: VideoStats;

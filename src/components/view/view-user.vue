@@ -61,6 +61,7 @@ const ProP=  defineProps({
     default:null,
   }
 });
+console.log("视频简介页面--》",ProP)
 
 const labe=ref([])
 
